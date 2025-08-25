@@ -9,7 +9,7 @@ function creatNewsCard(titleText, editorName, imgUrl, linkUrl) {
     title.classList.add("truncate")
     title.textContent = titleText
     title.href = linkUrl
-    
+
 
 
     const editor = document.createElement('h4');
@@ -41,10 +41,28 @@ async function loadData() {
 }
 await loadData()
 
+function creatNavBar() {
+
+    const nav = document.createElement('nav')
+
+    const home = document.createElement('a')
+    home.textContent = "home"
+    home.href="#home"
+
+    const creat = document.createElement('a')
+    creat.textContent = "add post"
+    creat.href='#create'
+
+    const news = document.createElement('a')
+    news.textContent = "news"
+    news.href='#news'
+
+    nav.append(home, creat, news)
+    document.body.prepend(nav)
+}
 
 
-
-
+creatNavBar()
 
 
 // const root = document.getElementById('root');
