@@ -1,20 +1,23 @@
 import { getData } from "../js/dal.js"
 
 
-function creatNewsCard(titleText, editorName, imgUrl ,linkUrl) {
+function creatNewsCard(titleText, editorName, imgUrl, linkUrl) {
 
     const main = document.getElementById('root')
 
     const title = document.createElement('a');
-    title.textContent = titleText;
+    title.classList.add("truncate")
+    title.textContent = titleText
     title.href = linkUrl
-
     
+
+
     const editor = document.createElement('h4');
     editor.textContent = editorName;
-    
+
     const image = document.createElement('img');
     image.src = imgUrl;
+
     const card = document.createElement('div');
     card.classList.add('card');
 
@@ -26,13 +29,19 @@ function creatNewsCard(titleText, editorName, imgUrl ,linkUrl) {
 
 async function loadData() {
     const articles = await getData()
+    console.log('article', articles);
+
+
     articles?.forEach(article => {
-        creatNewsCard(article.title, article.author, article.urlToImage);
-        // console.log('article', articles);
-        
+        if (article.author && article.title && article.urlToImage) {
+            creatNewsCard(article.title, article.author, article.urlToImage);
+        }
+
     });
 }
 await loadData()
+
+
 
 
 
