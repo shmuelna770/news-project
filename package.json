@@ -1,0 +1,22 @@
+{
+  "name": "news-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch app.js "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "config": "^4.1.1",
+    "cors": "^2.8.5",
+    "dot": "^1.1.3",
+    "dotenv": "^17.2.1",
+    "env": "^0.0.2",
+    "express": "^5.1.0"
+  }
+}
